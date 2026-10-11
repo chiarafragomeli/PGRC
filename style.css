@@ -1,0 +1,884 @@
+/* ── Variabili ────────────────────────────────────── */
+:root {
+  --orange:       #f7986d;
+  --brown-dark:   #6b4226;
+  --brown-mid:    #8c5a2f;
+  --yellow:       #f7c004;
+  --yellow-light: #f8de83;
+  --beige:        #ece3b7;
+  --beige-light:  #efeae7;
+  --green:        #40611c;
+  --teal:         #156782;
+  --gray:         #909592;
+  --text:         #1a1a1a;
+  --pill:         999px;
+  --card:         14px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--beige-light);
+  color: var(--text);
+  font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#app {
+  flex: 1;
+  min-height: 0;
+}
+
+
+/* ── Footer ───────────────────────────────────────── */
+.site-footer {
+  background-color: var(--green);
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  font-size: 0.78rem;
+  padding: 0.85rem 1rem;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+.site-footer a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+.site-footer a:hover { color: #fff; }
+
+.card-auth textarea.form-control { resize: vertical; }
+
+a { text-decoration: none; }
+
+/* ── Navbar ───────────────────────────────────────── */
+.navbar {
+  background-color: var(--green) !important;
+  padding: 0.6rem 0;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.9) !important;
+  font-size: 0.95rem;
+  padding: 0.25rem 0 !important;
+  font-weight: 500;
+}
+
+.nav-link:hover { color: var(--yellow-light) !important; }
+
+/* "Accedi/Registrati" in arancione */
+#nav-guest .nav-link {
+  color: var(--orange) !important;
+  font-weight: 700;
+}
+#nav-guest .nav-link:hover { color: var(--yellow-light) !important; }
+
+.navbar .dropdown-menu {
+  background-color: var(--green);
+  border: none;
+  border-radius: var(--card);
+  margin-top: 6px;
+  min-width: 180px;
+}
+
+.navbar .dropdown-item {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.navbar .dropdown-divider { border-color: rgba(255,255,255,0.2); }
+
+.navbar-toggler { border-color: rgba(255,255,255,0.3); }
+.navbar-toggler-icon { filter: invert(1); }
+
+/* ── Hero ─────────────────────────────────────────── */
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--brown-dark);
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  color: var(--brown-mid);
+  font-size: 0.95rem;
+  margin: 1rem 0 1.5rem;
+  max-width: 400px;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* ── Bottoni ──────────────────────────────────────── */
+.btn-hero {
+  background-color: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: var(--pill);
+  padding: 0.5rem 1.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  display: inline-block;
+}
+
+.btn-hero:hover { background-color: var(--brown-mid); color: #fff; }
+
+.btn-primary {
+  background-color: var(--orange);
+  border-color: var(--orange);
+  border-radius: var(--pill);
+  color: #fff;
+  font-weight: 500;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--brown-mid);
+  border-color: var(--brown-mid);
+  color: #fff;
+}
+
+.btn-success {
+  background-color: var(--green);
+  border-color: var(--green);
+  border-radius: var(--pill);
+  color: #fff;
+}
+.btn-success:hover { background-color: #2e4a13; border-color: #2e4a13; color: #fff; }
+
+.btn-danger  { border-radius: var(--pill); }
+.btn-outline-danger { border-radius: var(--pill); }
+
+.btn-outline-primary {
+  color: var(--orange);
+  border-color: var(--orange);
+  border-radius: var(--pill);
+}
+.btn-outline-primary:hover { background-color: var(--orange); color: #fff; }
+
+.btn-outline-secondary { border-radius: var(--pill); }
+
+/* ── Recipe pill ──────────────────────────────────── */
+.recipe-pill {
+  display: block;
+  background-color: var(--orange);
+  color: var(--brown-dark) !important;
+  border-radius: 14px;
+  padding: 1.1rem 1.4rem;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.15s, transform 0.1s;
+  line-height: 1.3;
+}
+
+.recipe-pill:hover {
+  background-color: #e8814d;
+  transform: translateY(-1px);
+}
+
+.pill-stars { font-size: 0.85rem; margin-top: 4px; }
+
+/* ── Sezioni home ─────────────────────────────────── */
+.section-title {
+  font-family: 'Barlow Condensed', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: var(--brown-dark);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.section-link {
+  color: var(--brown-mid);
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+.section-link:hover { color: var(--orange); }
+
+/* ── Pannelli home (piccoli, mantenuti per retrocompatibilità) ── */
+.panel-split { border-radius: var(--card); overflow: hidden; }
+.panel-green { background-color: var(--green); color: #fff; padding: 3rem 2.5rem; }
+.panel-beige { background-color: var(--beige); color: var(--text); padding: 3rem 2.5rem; }
+.panel-title { font-size: 1.75rem; font-weight: 800; letter-spacing: .02em; line-height: 1.2; }
+.panel-eyebrow { font-size: .85rem; opacity: .8; margin-bottom: .3rem; }
+.btn-panel-light { background-color: var(--yellow-light); color: var(--brown-dark); border: none; border-radius: var(--pill); padding: .5rem 1.5rem; font-weight: 600; font-size: .9rem; display: inline-block; }
+.btn-panel-light:hover { background-color: var(--yellow); color: var(--brown-dark); }
+.btn-panel-green { background-color: var(--green); color: #fff; border: none; border-radius: var(--pill); padding: .5rem 1.5rem; font-weight: 600; font-size: .9rem; display: inline-block; }
+.btn-panel-green:hover { background-color: #2e4a13; color: #fff; }
+
+/* ── Pannelli login/register (grandi, split view) ─ */
+.login-split-panel {
+  border-radius: var(--card);
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.login-panel-green {
+  background-color: var(--green);
+  padding: 3.5rem 3rem;
+  min-height: 480px;
+}
+
+.login-panel-beige {
+  background-color: var(--beige);
+  padding: 3.5rem 3rem;
+  min-height: 480px;
+}
+
+.login-panel-title {
+  font-family: 'Barlow Condensed', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--beige);
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.login-panel-title--green { color: var(--green); }
+
+.login-panel-sub {
+  font-size: 0.9rem;
+  color: rgba(236,227,183,0.75);
+  margin-bottom: 0.75rem;
+}
+
+.btn-login-light {
+  background-color: var(--beige);
+  color: var(--green);
+  border: none;
+  border-radius: var(--pill);
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+.btn-login-light:hover { background-color: var(--yellow-light); color: var(--green); }
+
+.btn-login-green {
+  background-color: var(--green);
+  color: var(--beige);
+  border: none;
+  border-radius: var(--pill);
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+.btn-login-green:hover { background-color: #2e4a13; color: var(--beige); }
+
+/* ── Carosello 3D (coverflow) ─────────────────────── */
+.c3d-wrap {
+  position: relative;
+}
+
+.c3d-stage {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.c3d-slide {
+  position: absolute;
+  border-radius: var(--card);
+  overflow: hidden;
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+.c3d-slide a {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.c3d-left a,
+.c3d-right a {
+  pointer-events: none;
+  cursor: default;
+}
+
+.c3d-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.c3d-center {
+  width: 36%;
+  left: 32%;
+  top: 0;
+  height: 100%;
+  z-index: 3;
+  opacity: 1;
+  filter: none;
+}
+
+.c3d-left {
+  width: 26%;
+  left: 0;
+  top: 8%;
+  height: 84%;
+  z-index: 2;
+  opacity: 0.55;
+  filter: brightness(0.65) blur(1.5px);
+}
+
+.c3d-right {
+  width: 26%;
+  right: 0;
+  top: 8%;
+  height: 84%;
+  z-index: 2;
+  opacity: 0.55;
+  filter: brightness(0.65) blur(1.5px);
+}
+
+.c3d-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+  color: #fff;
+  padding: 2rem 1rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.c3d-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255,255,255,0.88);
+  border: none;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brown-dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.15s, transform 0.15s;
+}
+.c3d-btn:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
+.c3d-btn-prev { left: 10px; }
+.c3d-btn-next { right: 10px; }
+
+/* ── Form validation ──────────────────────────────── */
+.search-error {
+  font-size: 0.82rem;
+  color: #dc3545;
+  margin-top: 0.3rem;
+}
+
+/* ── Recipe detail ────────────────────────────────── */
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--brown-mid);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-back:hover { color: var(--orange); }
+
+
+.recipe-title {
+  font-family: 'Barlow Condensed', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1.2;
+}
+
+.directions-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.directions-step {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.recipe-img {
+  width: 100%;
+  border-radius: 14px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.reviews-box {
+  background-color: var(--yellow-light);
+  border-radius: var(--card);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.review-row {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 0.6rem 0;
+}
+.review-row:last-child { border-bottom: none; }
+
+.ingredients-header,
+.directions-header {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--brown-mid);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--beige);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Card generiche ───────────────────────────────── */
+.card {
+  border: none;
+  border-radius: var(--card);
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.card.border-danger { border: 2px solid #dc3545 !important; }
+
+/* ── Form ─────────────────────────────────────────── */
+.form-control:focus, .form-select:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 0.2rem rgba(247,152,109,0.22);
+}
+.form-label { font-weight: 500; color: var(--brown-dark); font-size: 0.9rem; }
+
+/* ── Category chips ───────────────────────────────── */
+.chips-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border: 2px solid var(--beige);
+  border-radius: var(--pill);
+  background-color: #fff;
+  color: var(--brown-mid);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.13s;
+  user-select: none;
+}
+.category-chip:hover { border-color: var(--orange); color: var(--orange); }
+.category-chip.selected { background-color: var(--orange); border-color: var(--orange); color: #fff; }
+
+/* ── Stelle ───────────────────────────────────────── */
+.stars-filled { color: var(--yellow); }
+.stars-empty  { color: var(--gray); }
+
+/* ── Spinner ──────────────────────────────────────── */
+.spinner-border { color: var(--orange) !important; }
+
+/* ── Alert ────────────────────────────────────────── */
+.alert-info {
+  background-color: var(--yellow-light);
+  border-color: var(--yellow);
+  color: var(--brown-dark);
+}
+
+/* ── Titoli ───────────────────────────────────────── */
+h2 { font-weight: 700; }
+
+/* ── Nav stato attivo ─────────────────────────────── */
+.nav-link-active {
+  color: #fff !important;
+  font-weight: 700 !important;
+  position: relative;
+}
+.nav-link-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+/* ── Focus visibile ───────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Titolo di pagina (cookbook, settings, search) ── */
+.page-title {
+  font-family: 'Barlow Condensed', 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  color: var(--brown-dark);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Card immagine ricette (search) ───────────────── */
+.card-img-top {
+  border-top-left-radius: var(--card);
+  border-top-right-radius: var(--card);
+}
+
+.card-recipe-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ── Recipe detail — classi estratte da inline ─────── */
+.ingredient-row {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--beige);
+}
+
+.directions-text {
+  white-space: pre-line;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.review-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--brown-mid);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.review-date {
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+
+.btn-review-delete {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.8rem;
+  color: var(--brown-mid);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.btn-review-delete:hover {
+  color: var(--brown-dark);
+  text-decoration-color: var(--brown-dark);
+}
+
+/* ── Bookmark button ──────────────────────────────── */
+.btn-bookmark {
+  background-color: var(--green);
+  border: 2px solid var(--green);
+  border-radius: var(--pill);
+  color: #fff;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.btn-bookmark:hover, .btn-bookmark:focus {
+  background-color: #2e4a13;
+  border-color: #2e4a13;
+  color: #fff;
+}
+.btn-bookmark.btn-bookmark--remove {
+  background-color: transparent;
+  border-color: var(--brown-mid);
+  color: var(--brown-mid);
+}
+.btn-bookmark.btn-bookmark--remove:hover,
+.btn-bookmark.btn-bookmark--remove:focus {
+  background-color: var(--brown-mid);
+  border-color: var(--brown-mid);
+  color: #fff;
+}
+
+/* ── Community reviews carousel ───────────────────── */
+.cr-wrap {
+  position: relative;
+  padding: 0 2.5rem;
+}
+
+.cr-track {
+  display: flex;
+  gap: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.cr-card {
+  flex: 0 0 calc(33.333% - 0.67rem);
+  background: #fff;
+  border-radius: var(--card);
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  min-width: 0;
+}
+
+.community-review-title {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--brown-dark);
+  margin-bottom: 0.35rem;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.community-review-title:hover { color: var(--orange); }
+
+.community-review-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--gray);
+}
+
+.cr-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brown-dark);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: background 0.15s;
+}
+.cr-btn:hover:not(:disabled) { background: #fff; }
+.cr-btn:disabled { opacity: 0.3; cursor: default; }
+.cr-btn-prev { left: 0; }
+.cr-btn-next { right: 0; }
+
+/* ── Cookbook — pill ricetta ──────────────────────── */
+.cb-pill-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cb-pill-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: var(--orange);
+  color: var(--brown-dark);
+  border-radius: 10px;
+  padding: 0.4rem 0.9rem 0.4rem 0.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.15s;
+  max-width: 320px;
+}
+.cb-pill-link:hover { background-color: #e8814d; color: var(--brown-dark); }
+
+.cb-pill-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 7px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cb-pill-name {
+  flex: 1;
+}
+
+/* ── Cookbook — gruppi ────────────────────────────── */
+.cb-group-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brown-mid);
+  border-bottom: 2px solid var(--beige);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Cookbook — bottone rimozione ─────────────────── */
+.btn-cookbook-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--gray);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  padding: 0;
+  transition: background-color 0.15s, color 0.15s;
+}
+.btn-cookbook-remove:hover {
+  background-color: rgba(107,66,38,0.1);
+  color: var(--brown-dark);
+}
+
+/* ── Auth card (register / accedi) ───────────────── */
+.card-auth {
+  background-color: var(--beige);
+  border: none;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+.card-auth h4 {
+  font-weight: 800;
+  color: var(--brown-dark);
+  font-size: 1.45rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-auth .form-label {
+  font-weight: 700;
+  color: var(--brown-dark);
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-auth .form-control {
+  background-color: rgba(255,255,255,0.55);
+  border: 1.5px solid transparent;
+  border-radius: var(--card);
+  color: var(--text);
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.card-auth .form-control::placeholder {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.card-auth .form-control:focus {
+  background-color: rgba(255,255,255,0.85);
+  border-color: var(--brown-mid);
+  box-shadow: none;
+}
+
+/* Chips verticali full-width dentro auth card */
+.card-auth .chips-wrap {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-auth .category-chip {
+  display: block;
+  width: 100%;
+  border-radius: var(--card);
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  background-color: rgba(255,255,255,0.45);
+  border-color: transparent;
+  color: var(--brown-dark);
+}
+
+.card-auth .category-chip:hover {
+  background-color: rgba(255,255,255,0.75);
+  border-color: var(--orange);
+  color: var(--brown-dark);
+}
+
+.card-auth .category-chip.selected {
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+
+/* Bottone principale nei form auth */
+.btn-auth {
+  display: block;
+  width: 100%;
+  background-color: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: var(--pill);
+  padding: 0.8rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+.btn-auth:hover { background-color: #2e4a13; color: #fff; }
+
+/* Link secondario sotto il bottone */
+.auth-footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--brown-mid);
+}
+.auth-footer a {
+  color: var(--orange);
+  font-weight: 600;
+}
+.auth-footer a:hover { color: var(--brown-dark); }
+
+/* ── Login split — responsive mobile ─────────────── */
+@media (max-width: 767px) {
+  .login-split-panel,
+  .login-panel-green,
+  .login-panel-beige {
+    min-height: 200px;
+  }
+}

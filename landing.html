@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PGRC - Piattaforma per la gestione di ricette di cucina</title>
+  <link rel="icon" type="image/png" href="assets/images/logo_PGRC.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;0,900;1,400;1,500&family=Lato:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      background-color: #edeae0;
+      overflow: hidden;
+    }
+
+    /*contenitore principale*/
+    .page {
+      height: 100vh;
+      padding: 3.5vh 6vw;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /*etichetta/testata */
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(0.8rem, 1.1vw, 1.05rem);
+      color: #8c5a2f;
+      letter-spacing: 0.01em;
+      margin-bottom: auto;
+    }
+
+    /*logo*/
+    .brand-logo {
+      display: block;
+      height: 32px;
+      width: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /*sezione per affiancare testo e hero image */
+    .center-block {
+      display: flex;
+      align-items: stretch;
+      gap: 5vw;
+      flex: 1;
+    }
+
+    /*colonna del testo*/
+    .text-col {
+      flex: 1 1 0;
+      display: grid;
+      grid-template-rows: 1fr auto 1fr;
+    }
+
+    /*blocco centrale della colonna testo */
+    .text-center {
+      grid-row: 2;
+      align-self: center;
+    }
+
+    /*titolo principale*/
+    .title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+      color: #5c2d0e;
+      line-height: 1.06;
+      margin-bottom: 1.5rem;
+    }
+
+    /*sottotitolo*/
+    .subtitle {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.85rem, 1.1vw, 1rem);
+      color: #5c2d0e;
+      line-height: 1.7;
+      max-width: 360px;
+    }
+
+    /*contenitore del pulsante inizia a esplorare */
+    .esplora-wrap {
+      grid-row: 3;
+      align-self: end;
+      padding-bottom: 2vh;
+    }
+
+    /*stile del pulsante inizia a esplorare*/
+    .esplora-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: clamp(0.85rem, 1.1vw, 1rem);
+      letter-spacing: 0.15em;
+      color: #5c2d0e;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    /*effetto al passaggio del cursore sul pulsante */
+    .esplora-btn:hover {
+      color: #f7986d;
+    }
+
+    /*icona freccia del pulsante */
+    .esplora-arrow {
+      font-size: 1.4em;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    /*effetto hover sulla freccia*/
+    .esplora-btn:hover .esplora-arrow {
+      transform: translateX(5px);
+    }
+
+    /*colonna dll'immagine */
+    .img-col {
+      flex: 0 0 42%;
+      max-width: 480px;
+      align-self: center;
+    }
+
+    /*hero image*/
+    .hero-img {
+      display: block;
+      width: 100%;
+      height: 78vh;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    /*footer*/
+    .landing-footer {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      color: #8c5a2f;
+      text-align: center;
+      padding-top: 1.5vh;
+      opacity: 0.65;
+      flex-shrink: 0;
+    }
+
+    /*responsività su schermi con larghezza fino a 768px*/
+    @media (max-width: 768px) {
+
+      html,
+      body {
+        overflow: auto;
+      }
+
+      .page {
+        padding: 5vw;
+      }
+
+      .center-block {
+        flex-direction: column-reverse;
+        gap: 4vw;
+      }
+
+      .img-col {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hero-img {
+        height: 45vw;
+      }
+
+      .title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <span class="brand">
+      <img src="assets/images/logo_PGRC.png" class="brand-logo" alt="Logo PGRC">
+      Piattaforma per la gestione di ricette di cucina
+    </span>
+
+    <div class="center-block">
+      <div class="text-col">
+        <div class="text-center">
+          <h1 class="title">Benvenuto nel<br>nostro ricettario</h1>
+          <p class="subtitle">
+            Scopri centinaia di piatti esclusivi e componi il tuo ricettario personale.
+          </p>
+        </div>
+
+        <div class="esplora-wrap">
+          <a href="index.html" class="esplora-btn">
+            INIZIA A ESPLORARE
+            <span class="esplora-arrow">&#8594;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="img-col">
+        <img src="assets/images/hero_landing.jpg" class="hero-img" alt="Tavolo di un ristorante"
+          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80';">
+      </div>
+    </div>
+
+    <footer class="landing-footer">
+      © 2026 Chiara Fragomeli &nbsp;·&nbsp; Programmazione Web e Mobile &nbsp;·&nbsp; Università degli Studi di Milano -
+      Corso di laurea triennale in Sicurezza dei sistemi e delle reti informatiche (online)
+    </footer>
+  </div>
+</body>
+
+</html>

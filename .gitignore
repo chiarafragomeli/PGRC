@@ -1,0 +1,28 @@
+# Dipendenze
+node_modules/
+
+# Variabili d'ambiente e segreti
+.env
+.env.local
+.env.*.local
+
+# File di sistema e cache
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Sorgenti LaTeX e file ausiliari di compilazione (esclusi, mantenuto solo il PDF)
+docs/*.tex
+docs/*.aux
+docs/*.log
+docs/*.out
+docs/*.toc
+docs/*.png
+docs/*.jpg
+docs/*.jpeg
+
+# File di archivio e temporanei
+*.zip
+*.tar.gz
+PGRC_2026_codice.txt
