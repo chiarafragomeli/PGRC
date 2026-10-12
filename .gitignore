@@ -21,6 +21,9 @@ docs/*.toc
 docs/*.png
 docs/*.jpg
 docs/*.jpeg
+docs/*.synctex*
+docs/*.fls
+docs/*.fdb_latexmk
 
 # File di archivio e temporanei
 *.zip
