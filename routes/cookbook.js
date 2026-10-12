@@ -64,7 +64,7 @@ router.post("/", requireAuth, async (req, res) =>
     res.status(201).json(entry);
   } catch (err)
   {
-    // l'indice composto { userId: 1, recipeId: 1 } impedisce duplicati: se violato restituisce 11000
+    //l'indice composto { userId: 1, recipeId: 1 } impedisce duplicati: se violato restituisce 11000
     if (err.code === 11000)
     {
       return res.status(409).json({ error: "Ricetta già nel ricettario." });

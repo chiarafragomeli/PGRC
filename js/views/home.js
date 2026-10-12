@@ -1,7 +1,7 @@
 //////////////////////////////////////////
 /////////////////Homepage/////////////////
 //////////////////////////////////////////
-// questa view gestisce la schermata principale (#/) ed ha due versioni distinte in base allo stato di autenticazione dell'utente (ospite vs loggato). Include due componenti interattivi indipendenti: il carosello 3D e il carosello delle recensioni.
+//questa view gestisce la schermata principale e ha due versioni distinte in base allo stato di autenticazione dell'utente (ospite o autenticato). Include due componenti interattivi indipendenti: il carosello 3D e il carosello delle recensioni.
 
 //////////////////
 ///Carosello 3D///

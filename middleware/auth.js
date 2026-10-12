@@ -24,9 +24,9 @@ module.exports = async function requireAuth(req, res, next)
     //questa funzione verifica la firma hmac con jwt_secret e controlla la scadenza
   } catch
   {
+    return res.status(401).json({ error: "Token non valido o scaduto." });
     //jsonwebtoken error: firma non valida (token falsificato o corrotto)
     //token expired error: token scaduto (l'utente deve rifare il login)
-    return res.status(401).json({ error: "Token non valido o scaduto." });
   }
 
   let user;

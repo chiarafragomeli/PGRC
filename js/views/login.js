@@ -89,7 +89,7 @@ async function handleLogin(event)
 {
   //gestisce il submit del form di accesso: coordina la lettura dei valori del form, la chiamata asincrona al backend e la navigazione (con visualizzazione dell'errore)
   event.preventDefault();
-  //impedisce al browser di ricaricare la pagina al submit del form.Senza la SPA verrebbe resettata ad ogni tentativo di login
+  //impedisce al browser di ricaricare la pagina al submit del form
 
   const email = document.getElementById("login-email").value.trim();
   const password = document.getElementById("login-password").value;

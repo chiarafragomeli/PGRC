@@ -1,6 +1,6 @@
-//////////////////////////////////////////////////////////////
+////////////////////////////////////
 /////////View della ricetta/////////
-//////////////////////////////////////////////////////////////
+////////////////////////////////////
 
 let _recipeMealName = ""; // nome della ricetta visualizzata
 let _recipeCategory = ""; // categoria
@@ -64,7 +64,7 @@ async function recipeInit(id)
   const _noteValue = (session && cookbookEntry) ? (cookbookEntry.note || "") : "";
   //recupero l'eventuale nota personale salvata per questa ricetta
 
-  //calcolo la media matematica dei voti gusto arrotondata per mostrare le stelle piene/vuote
+  //calcolo la media matematica dei voti gusto arrotondata per mostrare le stelle piene o vuote
   let avgTaste = 0;
   if (reviews.length > 0) {
       let somma = 0;
@@ -75,7 +75,7 @@ async function recipeInit(id)
       avgTaste = Math.round(media);
   }
 
-  //costruisco i menu a tendina per data di preparazione con cicli for tradizionali
+  //costruisco i menu a tendina per data di preparazione
   let dateSelectorsHtml = "";
   if (session && !userReview) {
     const oggi = new Date();

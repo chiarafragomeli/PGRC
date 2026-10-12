@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 /////////////////////View del modulo di contatto/////////////////////
 ////////////////////////////////////////////////////////////
-//questo è un modulo fittizio, al submit, simula un invio nascondendo il form e mostrando un messaggio di conferma.
+//questo è un modulo fittizio, al submit simula un invio nascondendo il form e mostrando un messaggio di conferma.
 
 function contactView() {
     return `

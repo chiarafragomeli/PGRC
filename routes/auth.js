@@ -69,7 +69,7 @@ router.post("/register", async (req, res) =>
     });
   } catch (err)
   {
-    // se c'è una collisione sull'indice unique di MongoDB restituisco 409
+    //se c'è una collisione sull'indice unique di mongodb restituisco 409
     if (err.code === 11000)
     {
       return res.status(409).json({ error: "Esiste già un account con questa email." });
@@ -126,7 +126,7 @@ router.post("/login", async (req, res) =>
  */
 router.get("/me", requireAuth, (req, res) =>
 {
-  // req.user è già stato valorizzato da requireAuth dopo aver verificato il JWT
+  //req.user è già stato valorizzato da requireAuth dopo aver verificato il JWT
   res.json({ id: req.user._id, username: req.user.username, email: req.user.email });
 });
 

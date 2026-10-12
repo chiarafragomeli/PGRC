@@ -32,7 +32,7 @@ async function cookbookInit()
     return;
   }
 
-  //trovo le voci che necessitano di essere completate con TheMealDB
+  //trovo le voci che necessitano di essere completate con themealdb
   const needApi = entries.filter(e => !e.category || !e.thumb);
 
   if (needApi.length > 0)
@@ -107,7 +107,7 @@ function _cbRender(container)
       </div>`;
   }
 
-  //ordino i nomi dei gruppi in ordine alfabetico e costruisco l'HTML con cicli for tradizionali
+  //ordino i nomi dei gruppi in ordine alfabetico e costruisco l'HTML con cicli for
   const groupNames = Object.keys(groups).sort(function(a, b)
   {
     return a.localeCompare(b);

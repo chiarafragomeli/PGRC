@@ -2,7 +2,7 @@
 //////////////Ingresso dell'applicazione backend//////////////
 //////////////////////////////////////////////////////////////
 //configurazione Express con i middleware globali;
-// servire il frontend come file statici;
+//servire il frontend come file statici;
 //registrazione delle route dell'api rest;
 //implementazione dello SPA fallback;
 //connessione a mongodb e avvio del server

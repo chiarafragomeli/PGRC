@@ -16,6 +16,6 @@ const ReviewSchema = new mongoose.Schema({
 });
 
 ReviewSchema.index({ userId: 1, recipeId: 1 }, { unique: true });
-//questo indice serve a garantire che l'utente possa recensire solo una ricetta alla volta. è costruito su due campi, userId: 1 e recipeId: 1 che vengono indicizzati come un'unica chiave. unique: true impone il vincolo, cioè che non possano esistere due documenti con la stessa coppia userId, recipeId.
+//questo indice serve a garantire che l'utente possa recensire solo una ricetta alla volta. è costruito su due campi, userId: 1 e recipeId: 1, che vengono indicizzati come un'unica chiave. unique: true impone il vincolo, cioè che non possano esistere due documenti con la stessa coppia userId, recipeId
 
 module.exports = mongoose.model("Review", ReviewSchema);

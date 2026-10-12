@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////
-//view delle recensioni personali dell'utente//
+//View delle recensioni personali dell'utente//
 ///////////////////////////////////////////////
 
 function reviewsView()
@@ -27,7 +27,7 @@ async function reviewsInit()
     return;
   }
 
-  //clono l'array per non mutare i dati originali e ordino per data decrescente
+  //clono l'array per non modificare i dati originali e ordino per data decrescente
   const sorted = reviews.slice();
   sorted.sort(function(a, b)
   {

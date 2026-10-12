@@ -125,7 +125,7 @@ router.post("/", requireAuth, async (req, res) =>
     res.status(201).json(flatten(review));
   } catch (err)
   {
-    //se c'è errore 11000 significa che l'utente ha già recensito questa ricetta (indice composto)
+    //se c'è errore 11000 significa che l'utente ha già recensito questa ricetta
     if (err.code === 11000)
     {
       return res.status(409).json({ error: "Hai già recensito questa ricetta." });

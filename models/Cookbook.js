@@ -17,6 +17,6 @@ const CookbookSchema = new mongoose.Schema({
 });
 
 CookbookSchema.index({ userId: 1, recipeId: 1 }, { unique: true });
-//questo indice serve per non permettere che un utente salvi due volte la stessa ricetta -> in caso di inserimento duplicato MongoDB restituisce 11000 e l'handler risponde con 409 Conflict.
+//questo indice serve per non permettere che un utente salvi due volte la stessa ricetta -> in caso di inserimento duplicato MongoDB restituisce 11000 e l'handler risponde con 409 Conflict
 
 module.exports = mongoose.model("Cookbook", CookbookSchema);

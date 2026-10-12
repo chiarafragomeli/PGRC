@@ -23,8 +23,8 @@ function escapeHTML(str)
 /////////////////////////////////////////////////////////
 ///Gestione del token e della sessione in localStorage///
 /////////////////////////////////////////////////////////
-// flusso:
-// 1) il token JWT serve per autenticare le richieste HTTP verso il server (header Authorization)
+//flusso:
+// 1) il token JWT serve per autenticare le richieste HTTP verso il server (header Authorization);
 // 2) la sessione locale contiene una copia dei dati utente per aggiornare subito la UI (es. navbar)
 
 /**
