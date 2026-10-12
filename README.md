@@ -66,13 +66,7 @@ Questo comando scarica automaticamente tutte le librerie necessarie (Express, Mo
 
 ### 5. Configurazione del file `.env`
 
-Se si clona il repository da GitHub, creare il file `.env` a partire dal template:
-
-```bash
-cp .env.example .env
-```
-
-Il file include i seguenti valori predefiniti:
+Il file `.env` è già incluso nella cartella con i parametri predefiniti:
 
 ```
 MONGO_URI=mongodb://localhost:27017/pgrc
